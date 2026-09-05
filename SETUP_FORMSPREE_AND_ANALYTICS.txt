@@ -1,0 +1,65 @@
+NEXACADEMIA — FORMSPREE ENQUIRY + GOOGLE ANALYTICS SETUP
+
+The website design and other features have been left unchanged.
+Only the enquiry delivery method has been switched from Netlify Forms to Formspree.
+
+PART A — MAKE ENQUIRIES ARRIVE IN YOUR EMAIL
+
+1. Go to https://formspree.io and create a free account.
+2. Create a new form/project for NexAcademia.
+3. Formspree will give you a form endpoint similar to:
+   https://formspree.io/f/abcxyzde
+
+4. Copy ONLY the final form ID:
+   abcxyzde
+
+5. In your GitHub NexAcademia repository, open:
+   assets/content.js
+
+6. Find:
+   formspreeFormId:""
+
+7. Put your Formspree form ID between the quotation marks, for example:
+   formspreeFormId:"abcxyzde"
+
+8. Commit the change in GitHub.
+9. Netlify will automatically redeploy the website.
+10. Open the LIVE website and submit a test enquiry.
+11. Confirm the submission in your Formspree dashboard and check the email inbox
+    connected to your Formspree account.
+
+The website will:
+- send the existing enquiry fields to Formspree,
+- show a Sending... state while submitting,
+- display an error if submission fails,
+- redirect successful enquiries to thank-you.html.
+
+PART B — GOOGLE ANALYTICS 4
+
+No change has been made to the analytics setup.
+
+1. Create a Google Analytics 4 property and Web data stream.
+2. Copy your Measurement ID, which looks like:
+   G-XXXXXXXXXX
+3. In assets/content.js find:
+   gaMeasurementId:""
+4. Replace it with your ID:
+   gaMeasurementId:"G-XXXXXXXXXX"
+5. Commit the change.
+6. Netlify will redeploy automatically.
+7. Check Google Analytics Realtime after visiting the live site.
+
+EXISTING ANALYTICS EVENTS KEPT
+- open_enquiry
+- click_phone
+- select_pathway
+- support_finder_complete
+- student_challenge_correct
+- enquiry_submit_attempt
+- generate_lead
+
+The generate_lead event now identifies the successful enquiry method as Formspree.
+
+IMPORTANT
+Do not paste your personal receiving email address into the website code.
+Formspree manages the destination email from your Formspree account/dashboard.
